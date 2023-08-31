@@ -22,11 +22,6 @@ item_names:
     dw "___       SCREW ATTACK       ___"
     dw "___       MORPHING BALL      ___"
     dw "___       A REFUEL TANK      ___"
-
-    ;dw "___    ANOTHER WORLD ITEM    ___" ; another world
-    ;dw "___         NOTHING          ___" ; another world
-    ;dw "___        NO HEALTH         ___" ; another world
-
     dw "___        DAMAGE AMP        ___"
     dw "___     SMALL AMMO TANK      ___"
     dw "___     LARGE AMMO TANK      ___"
@@ -36,6 +31,12 @@ item_names:
     dw "___        DARK VISOR        ___"
     dw "___       METROID SUIT       ___"
     dw "___        HYPERCHARGE       ___"
+
+    ; Other world items, but use the SM sprites still
+    dw "___      A RESERVE TANK      ___"
+    dw "___       GRAVITY SUIT       ___"
+    dw "___        SPRING BALL       ___"
+
 
     ; add 100 more entries for worst case of a different item at each location
     ; to be filled by patcher

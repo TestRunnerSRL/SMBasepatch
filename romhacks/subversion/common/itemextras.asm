@@ -43,6 +43,10 @@ sm_item_graphics:
     dw $FE26 ; METROID SUIT (89B240)
     dw $F786 ; HYPERCHARGE (89B140)
 
+    dw $E41F ; Reserve tank (graphics at $89:9000)
+    dw $E2D8 ; Gravity suit (graphics at $89:8100)
+    dw $E271 ; Spring ball (graphics at $89:8200)
+
     dw plm_graphics_entry_offworld_progression_item
     dw plm_graphics_entry_offworld_item
 
@@ -88,6 +92,10 @@ sm_item_plm_pickup_sequence_pointers:
     dw $F7B7 ; HYPERCHARGE
 
     dw plm_sequence_generic_item_0_bitmask ; off-world progression item: generic item function
+    dw plm_sequence_generic_item_0_bitmask ; off-world progression item: generic item function
+    dw plm_sequence_generic_item_0_bitmask ; off-world progression item: generic item function
+
+    dw plm_sequence_generic_item_0_bitmask ; off-world progression item: generic item function
     dw plm_sequence_generic_item_0_bitmask ; off-world item: generic item function
 
 i_item_setup_shared:
@@ -97,10 +105,10 @@ i_item_setup_shared:
     asl #3                          ; Multiply by 8 for table width
     tax
     lda.l rando_item_table+$2, x       ; Load item id from item table
-    cmp #$001E
+    cmp #$0021
     bmi .all_items
     ; offworld item:
-    lda #$001E              ; item ids over 20 (#$0015 and up) are used to display off-world item names, but the graphics are always either item gfx #$0015 or #$0016
+    lda #$0021              ; item ids over 20 (#$0015 and up) are used to display off-world item names, but the graphics are always either item gfx #$0015 or #$0016
     clc : adc.l rando_item_table+$6, x      ; add one if off-world item isnt progression
 .all_items
     asl ; multiply by 2 for table width
@@ -124,10 +132,10 @@ i_load_custom_graphics_shared:
     asl #3                         ; Multiply by 8 for table width
     tax
     lda.l rando_item_table+$2, x      ; Load item id from item table
-    cmp #$001E
+    cmp #$0021
     bmi .all_items
     ; offworld item:
-    lda #$001E              ; item ids over 20 (#$0015 and up) are used to display off-world item names, but the graphics are always either item gfx #$0015 or #$0016
+    lda #$0021              ; item ids over 20 (#$0015 and up) are used to display off-world item names, but the graphics are always either item gfx #$0015 or #$0016
     clc : adc.l rando_item_table+$6, x      ; add one if off-world item isnt progression
 .all_items
     plx
