@@ -249,6 +249,8 @@ rando_player_name_table:
     db "123456789012" : dw $0000, $0000
     db "123456789012" : dw $0000, $0000
     db "123456789012" : dw $0000, $0000
+    db "123456789012" : dw $0000, $0000
+    db "123456789012" : dw $0000, $0000
 
 ; Archipelago Player ID table (aka world id)
 ; indexed by Other Player Index listed in rando_item_table
