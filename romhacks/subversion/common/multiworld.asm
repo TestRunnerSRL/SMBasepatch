@@ -383,6 +383,7 @@ mw_cleanup_item_link_messagebox:
 ; A = item id
 mw_receive_item:
     pha : phx
+    phb ; data bank cannot be C0+ since SETFX reads from 0000,y and must access WRAM that way
     cmp #$0020
     beq .end                 ; skip receiving if its a Nothing item (#$0016 might also mean offworld progression item? which should be skipped too)
     cmp #$0021
@@ -393,7 +394,6 @@ mw_receive_item:
     lda #$0001 ; sound number
     sta.b $cc
     ldy #$00cc ; pointer to sound number
-    phb ; data bank cannot be C0+ since SETFX reads from 0000,y and must access WRAM that way
     pea $7e7e
     plb : plb ; DB = $7E
     
@@ -413,6 +413,7 @@ mw_receive_item:
 .end
     stz.b $ce
     stz.b $cc
+    plb
     plx : pla
     rts
 

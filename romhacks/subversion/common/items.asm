@@ -136,6 +136,11 @@ perform_item_pickup:
     plx
     rtl
 
+
+DrawPLMGraphicsLong:
+    jsr $8764               ; Jump to original PLM graphics loading routine ($84:8764)
+    rtl
+
 ; function pointer data usable for 'picking up' other players' items (which to SM is just a message box)
 plm_sequence_generic_item_0_bitmask:
     ; $84:88F3 = generic item pickup function, parameters:

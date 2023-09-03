@@ -8,10 +8,10 @@
 sm_item_graphics:
     ; highest bit clear means this item type's gfx is always loaded already,
     ; and the value is an item gfx index that can be stored directly at $7e:df0c,x
-    dw $E0BD ; Energy Tank (899100)
-    dw $E0D5 ; Missile (899200)
-    dw $E0ED ; Super Missile (899300)
-    dw $E105 ; Power Bomb (899500)
+    dw $E0BF ; Energy Tank (899100)
+    dw $E0D7 ; Missile (899200)
+    dw $E0EF ; Super Missile (899300)
+    dw $E107 ; Power Bomb (899500)
     ; pointers to a 10-byte graphics data entry anywhere in bank $84 (this value will be saved by $84:8764 Load item PLM GFX)
     ; for example: $84:E12F in vanilla ROM contains: $8000 (implied bank $89:8000: bomb plm graphic data), followed by 8 palette indices
     ;              $84:E12F: $8000,00,00,00,00,00,00,00,00
@@ -111,9 +111,6 @@ i_item_setup_shared:
     lda #$0021              ; item ids over 20 (#$0015 and up) are used to display off-world item names, but the graphics are always either item gfx #$0015 or #$0016
     clc : adc.l rando_item_table+$6, x      ; add one if off-world item isnt progression
 .all_items
-    asl ; multiply by 2 for table width
-    tax
-    lda.l sm_item_graphics, x
     bpl .alwaysloaded   ; if high bit is not set, this isn't a pointer
 
     plx : ply
@@ -146,7 +143,7 @@ i_load_custom_graphics_shared:
     bpl .alwaysloaded   ; if high bit is not set, this isn't a pointer
     tay ; Y = pointer to 10-byte graphics entry to load (implied bank $84)
     plx ; X = PLM index again
-    jsr $8764               ; Jump to original PLM graphics loading routine ($84:8764)
+    jsl DrawPLMGraphicsLong ; Jump to original PLM graphics loading routine ($84:8764)
     ply
     rtl
 
