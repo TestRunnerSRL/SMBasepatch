@@ -230,3 +230,9 @@ MessageBoxTable:
   DW #$0168 ; dev room
 
 
+org $848393
+XRayCustomItemTable:
+    DW #archipelago_visible_item_plm
+    DW #archipelago_chozo_item_plm
+    DW #archipelago_hidden_item_plm
+    DW $0000
