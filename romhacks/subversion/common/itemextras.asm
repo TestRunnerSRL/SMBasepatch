@@ -47,8 +47,8 @@ sm_item_graphics:
     dw $E2D8 ; Gravity suit (graphics at $89:8100)
     dw $E271 ; Spring ball (graphics at $89:8200)
 
-    dw plm_graphics_entry_offworld_progression_item
     dw plm_graphics_entry_offworld_item
+    dw plm_graphics_entry_offworld_progression_item
 
 
 ; indexed by 0 <= item id <= 22
