@@ -401,6 +401,8 @@ mw_receive_item:
     ;plb ; restore DB
     ;lda #$0037
     ;jsl $809049 ; play sound #$37, or was it 1, idk TODO document
+    LDA #$002B
+    jsl $809049
 
     stz.b $cc
     ; message box:
@@ -659,6 +661,10 @@ ap_playerid_to_rom_other_player_index:
 
 i_live_pickup_multiworld: ; touch PLM code
     phx : phy : php
+
+    LDA #$002B
+    jsl $809049 ; play sfx
+
     lda.l $1dc7, x              ; Load PLM room argument (item location id). '.l' makes this work with DB>=$c0
     asl #3 : tax                ; index by item location id into rando_item_table (entry size 8 bytes)
 

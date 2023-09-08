@@ -59,7 +59,7 @@ p_visible_item:
     dw !IGoto, .loop
     .trigger
     dw !ISetItem
-    DW $8C07 : DB $2B
+    ;DW $8C07 : DB $2B
     dw !IPickup
     .end
     dw !IGoto, $dfa9
@@ -92,7 +92,7 @@ p_hidden_item:
     dw !IGoto, .loop2
     .trigger
     dw !ISetItem
-    DW $8C07 : DB $2B
+    ;DW $8C07 : DB $2B
     dw !IPickup
     .end
     dw !IJSR, $e032
@@ -161,3 +161,72 @@ offworld_graphics_data_progression_item:
 org $89B700
 offworld_graphics_data_item:
 ; the randomizer's patcher will write the actual graphics here at $89:9100 and $89:9200
+
+
+
+org $8586D2
+MessageBoxTable:
+  DW #$0168
+  
+  DW #$4030 ; energy tank
+  DW #$4030 ; missiles
+  DW #$4030 ; super missiles
+  DW #$4030 ; power bombs
+  DW #$4030 ; grapple beam
+  DW #$4030 ; xray
+  DW #$4030 ; varia suit
+  DW #$4030 ; speed ball
+  DW #$4030 ; morph
+  DW #$4030 ; screw atack
+  DW #$4030 ; high jump
+  DW #$4030 ; space jump
+  DW #$4030 ; speed booster
+  DW #$4030 ; charge beam
+  DW #$4030 ; ice beam
+  DW #$4030 ; wave beam
+  DW #$4030 ; spazer beam
+  DW #$4030 ; plasma beam
+  DW #$4030 ; bombs
+  DW #$000A ; map station
+  DW #$000A ; energy station
+  DW #$000A ; ammo station
+  DW #$900A ; save station
+  DW #$000A ; saved
+  DW #$4030 ; reserve
+  DW #$4030 ; gravity suit
+  DW #$001E ; didn't save
+  DW #$900A ; ship save
+  DW #$4030 ; damage amp
+  DW #$4030 ; small ammo
+  DW #$4030 ; large ammo
+  DW #$4030 ; accel charge
+  DW #$4030 ; space jump boost
+  DW #$4030 ; gravity boots
+  DW #$4030 ; dark visor
+  DW #$4030 ; metroid suit
+  DW #$4030 ; unknown item
+  DW #$8100 ; bridge
+  DW #$8100 ; detonate
+  DW #$0100 ; locked
+  DW #$0064 ; scanner
+  DW #$0064 ; generator deactivated
+  DW #$0064 ; generator activated
+  DW #$800A ; dangerous save
+  DW #$0100 ; puzzle 1
+  DW #$0100 ; puzzle 2
+  DW #$0100 ; puzzle 3
+  DW #$0100 ; puzzle 1.1
+  DW #$0100 ; puzzle 2.2
+  DW #$4030 ; ice missiles
+  DW #$0080 ; key 1
+  DW #$0080 ; key 2
+  DW #$0080 ; key 3
+  DW #$0080 ; key 4
+  DW #$0080 ; key 5
+  DW #$0080 ; key 6
+  DW #$0080 ; key 7
+  DW #$4030 ; hypercharge
+  DW #$0168 ; dev room
+  DW #$0168 ; dev room
+
+
