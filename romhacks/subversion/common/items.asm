@@ -236,3 +236,21 @@ XRayCustomItemTable:
     DW #archipelago_chozo_item_plm
     DW #archipelago_hidden_item_plm
     DW $0000
+
+;JSL $82E118 Resume music
+org $84fd94
+    NOP : NOP : NOP : NOP
+org $84fe7b
+    NOP : NOP : NOP : NOP
+org $84ff23
+    NOP : NOP : NOP : NOP
+org $8489f2
+    NOP : NOP : NOP : NOP
+org $8488E1
+    NOP : NOP : NOP : NOP
+org $848908
+    NOP : NOP : NOP : NOP
+org $848933
+    NOP : NOP : NOP : NOP
+org $84895A
+    NOP : NOP : NOP : NOP
