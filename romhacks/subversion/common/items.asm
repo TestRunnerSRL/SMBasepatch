@@ -254,3 +254,8 @@ org $848933
     NOP : NOP : NOP : NOP
 org $84895A
     NOP : NOP : NOP : NOP
+
+
+org $84e4f8
+    ; ammo items ignore room arg and instead always use default values
+    LDA #$0000
