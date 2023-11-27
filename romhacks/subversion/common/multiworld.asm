@@ -814,7 +814,7 @@ org $85EF80
 table box_grey.tbl,rtl
     ;   0                              31
 item_sent:
-    dw "___         YOU FOUND        ___"
+    dw "___        YOU FOUND         ___"
     dw "___      ITEM NAME HERE      ___"
     dw "___           FOR            ___"
     dw "___          PLAYER          ___"
@@ -828,7 +828,7 @@ item_received:
 item_received_end:
 
 item_link_distributed:
-    dw "___         YOU FOUND        ___"
+    dw "___        YOU FOUND         ___"
     dw "___      ITEM NAME HERE      ___"
     dw "___     FOR YOURSELF AND     ___"
     dw "___      ITEM LINK NAME      ___"
